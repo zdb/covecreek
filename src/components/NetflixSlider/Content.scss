@@ -1,0 +1,120 @@
+.content {
+  position: relative;
+  height: 55vh;
+  margin-bottom: 0 !important;
+  overflow: hidden;
+
+  &__background,
+  &__background__shadow,
+  &__background__image,
+  &__area {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+
+  &__background {
+    left: 0;
+    right: 0;
+
+    .video-loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 110px;
+      height: 42px;
+      z-index: 21;
+      margin-left: -55px;
+      margin-top: -21px;
+    }
+
+    &__shadow {
+      display: none;
+      left: 0;
+      background: #000;
+      width: 30%;
+      width: 24%;
+      z-index: 10;
+
+      &:before {
+        content: '';
+        position: absolute;
+        z-index: 10;
+        background-image: linear-gradient(to right,#000,transparent);
+        top: 0;
+        bottom: 0;
+        left: 100%;
+        width: 275px;
+      }
+    }
+
+    &__image {
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      z-index: 1;
+    }
+  }
+
+  &__area {
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 11;
+
+    &__container {
+      display: inline-block;
+      // padding: 30px 70px;
+      color: #fff;
+      // background: rgba(0, 0, 0, 0.8);
+      margin: 1em;
+      padding: 0 3em;
+      border-radius: 10px;
+      max-width: 550px;
+
+    }
+  }
+
+  &__title {
+    margin-top: 1em;
+    font-size: 45px;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: rgba(0,0,0,0.5) 0 2px 5px;
+    font-family: 'Oswald', sans-serif;
+  }
+
+  &__description {
+    font-size: 18px;
+    color: #999;
+    color: #fff;
+    text-shadow: rgba(0,0,0,0.5) 0 2px 5px;
+    margin-top: 20px;
+
+    &__container {
+      background: rgba(0,0,0,0.5);
+      padding: 0.25em;
+      line-height: 1.8;
+      display: inline;
+    }
+  }
+
+  .button {
+    margin-left: 0;
+    margin-top: 1em;
+  }
+
+  &__close {
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    outline: none;
+    border: none;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+}

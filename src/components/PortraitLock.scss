@@ -1,0 +1,20 @@
+.portrait-lock {
+    background: url(../images/portrait-lock.png) #222 center no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999999;
+    display: none;
+}
+
+@media only screen and (max-device-width: 760px) 
+                   and (orientation: landscape) {
+    .portrait-lock { display:block;	} 
+}
+
+@media all and (orientation:portrait) { 
+    .portrait-lock { display:none;	} 
+}

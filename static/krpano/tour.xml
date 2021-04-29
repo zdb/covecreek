@@ -1,0 +1,136 @@
+﻿<?xml version="1.0"?>
+<krpano>
+  <autorotate speed="1.5" enabled="true"  horizon="off"></autorotate>
+  <skin_settings
+   loadscene_flags="MERGE"
+   loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+   loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+   loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+  />
+
+
+  <!-- startup action - load the first scene -->
+  <action name="startup" autorun="onstart">
+    if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+    loadscene(get(startscene), null, MERGE);
+    if(startactions !== null, startactions() );
+  </action>
+
+  <events keep="true" onidle="autoslide"></events>
+  <events keep="true" onclick="stopautoslide"></events>
+
+  <action name="autoslide">
+    setinterval("autoslideinterval", 5,
+      skin_nextscene_loop(+1);
+    );
+  </action>
+  <action name="stopautoslide">
+    clearinterval("autoslideinterval");
+  </action>
+
+  <action name="nextslide">
+    stopautoslide();
+    skin_nextscene_loop(+1);
+    autoslide();
+  </action>
+
+  <action name="prevslide">
+    stopautoslide();
+    skin_nextscene_loop(-1);
+    autoslide();
+  </action>
+
+
+  <action name="skin_nextscene">
+    add(newsceneindex, scene[get(xml.scene)].index, %1);
+    if(newsceneindex GE 0 AND newsceneindex LT scene.count,
+      skin_loadscene(get(newsceneindex), calc(%1 LT 0 ? skin_settings.loadscene_blend_prev : skin_settings.loadscene_blend_next));
+      );
+  </action>
+
+
+  <action name="skin_nextscene_loop">
+    add(newsceneindex, scene[get(xml.scene)].index, %1);
+    sub(lastsceneindex, scene.count, 1);
+    if(newsceneindex LT 0, copy(newsceneindex,lastsceneindex));
+    if(newsceneindex GT lastsceneindex, set(newsceneindex,0));
+    skin_loadscene(get(newsceneindex), calc(%1 LT 0 ? skin_settings.loadscene_blend_prev : skin_settings.loadscene_blend_next));
+  </action>
+
+  <action name="skin_loadscene">
+		loadscene(get(scene[%1].name), null, get(skin_settings.loadscene_flags), %2);
+	</action>
+  
+  <plugin name="gyro" keep="true" url="" html5_url="plugins/gyro2.js" devices="html5+!firefox+!android" enabled="true" camroll="true" friction="0" velastic="0" />
+
+  <!-- SCENES Go Here -->
+  <scene name="scene_chipinaw_night_aerial" title="Campus Night" onstart="" thumburl="panos/Chipinaw_Night_Aerial.tiles/thumb.jpg" lat="" lng="" heading="">
+    <view hlookat="-112.421" vlookat="38.714" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto"/>
+    <preview url="panos/Chipinaw_Night_Aerial.tiles/preview.jpg"/>
+    <image>
+      <cube url="panos/Chipinaw_Night_Aerial.tiles/pano_%s.jpg"/>
+      <cube url="panos/Chipinaw_Night_Aerial.tiles/mobile/pano_%s.jpg" devices="mobile"/>
+    </image>
+  </scene>
+
+<scene name="scene_Athletic_Fields" title="Athletic Fields" onstart="" thumburl="panos/Athletic_Fields.tiles/thumb.jpg" lat="41.69822472" lng="-86.22749139" heading="0.0">
+  <view hlookat="-77.020" vlookat="33.026" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+  <preview url="panos/Athletic_Fields.tiles/preview.jpg" />
+  <image>
+    <cube url="panos/Athletic_Fields.tiles/pano_%s.jpg" />
+    <cube url="panos/Athletic_Fields.tiles/mobile/pano_%s.jpg" devices="mobile" />
+  </image>
+</scene>
+
+  <scene name="scene_UNE_Aerial" title="University of New England" onstart="" thumburl="panos/UNE_Aerial_edit.tiles/thumb.jpg" lat="43.46076194" lng="-70.38769528" heading="0.0">
+    <view hlookat="163.027" vlookat="32.135" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+    <preview url="panos/UNE_Aerial_edit.tiles/preview.jpg" />
+    <image prealign="0|0.0|0">
+      <cube url="panos/UNE_Aerial_edit.tiles/pano_%s.jpg" />
+      <cube url="panos/UNE_Aerial_edit.tiles/mobile/pano_%s.jpg" devices="mobile" />
+    </image>
+  </scene>
+
+
+<scene name="scene_UC_San_Diego_Libary" title="UCSD Library" onstart="" thumburl="panos/UC_San_Diego_Libary.tiles/thumb.jpg" lat="32.88069667" lng="-117.23722194" heading="0.0">
+  <view hlookat="0.0" vlookat="10.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto"/>
+  <preview url="panos/UC_San_Diego_Libary.tiles/preview.jpg"/>
+  <image>
+    <cube url="panos/UC_San_Diego_Libary.tiles/pano_%s.jpg"/>
+    <cube url="panos/UC_San_Diego_Libary.tiles/mobile/pano_%s.jpg" devices="mobile"/>
+  </image>
+</scene>
+
+  
+  <scene name="scene_Snowbowl_Aerial" title="Arizona Snowbowl" onstart="" thumburl="panos/snowbowl_aerial.tiles/thumb.jpg" lat="35.33038000" lng="-111.69043000" heading="0.0" logourl="logos/snowbowl.logo.png">
+    <view hlookat="-137.035" vlookat="10" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+    <preview url="panos/snowbowl_aerial.tiles/preview.jpg" />
+    <image>
+      <cube url="panos/snowbowl_aerial.tiles/pano_%s.jpg" />
+      <cube url="panos/snowbowl_aerial.tiles/mobile/pano_%s.jpg" devices="mobile" />
+    </image>
+  </scene>
+
+  <scene name="scene_nyc_empire_fulton_ferry" title="NYC Empire Fulton Ferry" onstart="" thumburl="panos/nyc_empire_fulton_ferry.tiles/thumb.jpg" logourl="logos/nyc.logo.png">
+  <preview url="panos/nyc_empire_fulton_ferry.tiles/preview.jpg" />
+  <view hlookat="-482.003" vlookat="-9.178" fovtype="MFOV" fov="112.642" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+  <image type="CUBE" multires="true" tilesize="512">
+    <level tiledimagewidth="5760" tiledimageheight="5760">
+      <cube url="panos/nyc_empire_fulton_ferry.tiles/mres_%s/l4/%v/l4_%s_%v_%h.jpg" />
+    </level>
+    <level tiledimagewidth="2816" tiledimageheight="2816">
+      <cube url="panos/nyc_empire_fulton_ferry.tiles/mres_%s/l3/%v/l3_%s_%v_%h.jpg" />
+    </level>
+    <level tiledimagewidth="1536" tiledimageheight="1536">
+      <cube url="panos/nyc_empire_fulton_ferry.tiles/mres_%s/l2/%v/l2_%s_%v_%h.jpg" />
+    </level>
+    <level tiledimagewidth="768" tiledimageheight="768">
+      <cube url="panos/nyc_empire_fulton_ferry.tiles/mres_%s/l1/%v/l1_%s_%v_%h.jpg" />
+    </level>
+    <mobile>
+      <cube url="panos/nyc_empire_fulton_ferry.tiles/mobile_%s.jpg" />
+    </mobile>
+  </image>
+</scene>
+
+</krpano>

@@ -1,0 +1,46 @@
+.the-section {
+  h1, h2{ color: #fff; }
+  
+  h2 {
+    color: #56a9e0;
+    font-size: 1em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 2em;
+    max-width: 750px;
+    margin: auto;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 0.5em;
+    padding: 0;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  position: relative;
+  background: #162034;
+  z-index: 5;
+  padding: 75px 0 75px 0;
+  text-align: center;
+  
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (max-width: 767px) {
+  .the-section {
+    .section-container{ padding: 0 1rem; }
+    padding: 1.5rem;
+  }
+    
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+}

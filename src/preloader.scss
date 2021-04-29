@@ -1,0 +1,34 @@
+#preloader {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 999999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+
+  border: 0.5em solid #395288;
+  border-top: 0.5em solid #0076c4;
+
+  .preloader__logo {
+    width: 70px;
+    // animation: load8 7s infinite linear;
+  }
+}
+
+@keyframes load8 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

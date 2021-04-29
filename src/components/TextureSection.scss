@@ -1,0 +1,76 @@
+.texture-section {
+  &:before,
+  &:after {
+    content: "";
+    width: 100%;
+    left: 0;
+    height: 72px;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &:before {
+    top: -70px;
+    background: url(../images/texture-top.png);
+    background-repeat: repeat-x;
+    background-position: bottom;
+  }
+
+  &:after {
+    bottom: -70px;
+    background: url(../images/texture-bottom.png);
+    background-repeat: repeat-x;
+    background-position: top;
+  }
+
+  h1, h2{ color: #fff; }
+  
+  h2 {
+    color: #56a9e0;
+    font-size: 1em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 2em;
+    max-width: 750px;
+    margin: auto;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 0.5em;
+    padding: 0;
+  }
+
+  position: relative;
+  background: #2a3c61;
+  z-index: 20;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.texture-section.bottomless {
+  &:after { display: none; }
+}
+
+.texture-section.topless {
+  &:before { display: none; }
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (max-width: 767px) {
+  .texture-section {
+    &:before {}
+    &:after {}
+
+    p {
+      font-size: 1.3em;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  
+}

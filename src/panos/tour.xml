@@ -1,0 +1,167 @@
+﻿<?xml version="1.0"?>
+<krpano>
+  <autorotate speed="1.5" enabled="true"  horizon="off"></autorotate>
+  <!-- startup action - load the first scene -->
+  <action name="startup" autorun="onstart">
+    if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+    loadscene(get(startscene), null, MERGE);
+    if(startactions !== null, startactions() );
+  </action>
+
+  <scene name="scene_Waterfont_Maine" title="Camp Vega" onstart="" thumburl="panos/Waterfont_Maine.tiles/thumb.jpg" lat="" lng="" heading="">
+    <view hlookat="-160.043" vlookat="29.381" fovtype="MFOV" fov="120.000" fovmin="85" fovmax="145" limitview="auto"/>
+    <preview url="panos/Waterfont_Maine.tiles/preview.jpg"/>
+    <image>
+      <cube url="panos/Waterfont_Maine.tiles/pano_%s.jpg"/>
+      <cube url="panos/Waterfont_Maine.tiles/mobile/pano_%s.jpg" devices="mobile"/>
+    </image>
+  </scene>
+  <scene name="scene_chipinaw_night_aerial" title="Camp Chipinaw" onstart="" thumburl="panos/Chipinaw_Night_Aerial.tiles/thumb.jpg" lat="" lng="" heading="">
+    <view hlookat="-112.421" vlookat="38.714" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto"/>
+    <preview url="panos/Chipinaw_Night_Aerial.tiles/preview.jpg"/>
+    <image>
+      <cube url="panos/Chipinaw_Night_Aerial.tiles/pano_%s.jpg"/>
+      <cube url="panos/Chipinaw_Night_Aerial.tiles/mobile/pano_%s.jpg" devices="mobile"/>
+    </image>
+  </scene>
+  <scene name="scene_cheley_rockclimbing_aerial" title="Colorado Camp" onstart="" thumburl="panos/cheley_rockclimbing_aerial.tiles/thumb.jpg" lat="" lng="" heading="">
+    <view hlookat="-70.797" vlookat="13.422" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto"/>
+    <preview url="panos/cheley_rockclimbing_aerial.tiles/preview.jpg"/>
+    <image>
+      <cube url="panos/cheley_rockclimbing_aerial.tiles/pano_%s.jpg"/>
+      <cube url="panos/cheley_rockclimbing_aerial.tiles/mobile/pano_%s.jpg" devices="mobile"/>
+    </image>
+  </scene>
+  <scene name="scene_trailsend_waterfront" title="Trails End Camp" onstart="" thumburl="panos/trailsend_waterfront.tiles/thumb.jpg" lat="" lng="" heading="">
+    <view hlookat="-64.186" vlookat="22.117" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto"/>
+    <preview url="panos/trailsend_waterfront.tiles/preview.jpg"/>
+    <image>
+      <cube url="panos/trailsend_waterfront.tiles/pano_%s.jpg"/>
+      <cube url="panos/trailsend_waterfront.tiles/mobile/pano_%s.jpg" devices="mobile"/>
+    </image>
+  </scene>
+  <scene name="scene_Tennis_New_York" title="Tennis New York" onstart="" thumburl="panos/Tennis_New_York.tiles/thumb.jpg" lat="" lng="" heading="">
+    <view hlookat="-424.439" vlookat="32.520" fovtype="MFOV" fov="120.000" fovmin="85" fovmax="145" limitview="auto"/>
+    <preview url="panos/Tennis_New_York.tiles/preview.jpg"/>
+    <image>
+      <cube url="panos/Tennis_New_York.tiles/pano_%s.jpg"/>
+      <cube url="panos/Tennis_New_York.tiles/mobile/pano_%s.jpg" devices="mobile"/>
+    </image>
+  </scene>
+  <scene name="scene_Gym_Two" title="International Gymnastics Camp" onstart="" thumburl="panos/Gym_Two.tiles/thumb.jpg" lat="" lng="" heading="">
+    <view hlookat="-192.815" vlookat="-0.221" fovtype="MFOV" fov="120.000" fovmin="85" fovmax="145" limitview="auto"/>
+    <preview url="panos/Gym_Two.tiles/preview.jpg"/>
+    <image>
+      <cube url="panos/Gym_Two.tiles/pano_%s.jpg"/>
+      <cube url="panos/Gym_Two.tiles/mobile/pano_%s.jpg" devices="mobile"/>
+    </image>
+  </scene>
+  <scene name="scene_North_Carolina" title="Camp Greystone" onstart="" thumburl="panos/North_Carolina.tiles/thumb.jpg" lat="" lng="" heading="">
+    <view hlookat="-571.649" vlookat="59.525" fovtype="MFOV" fov="120.000" fovmin="85" fovmax="145" limitview="auto"/>
+    <preview url="panos/North_Carolina.tiles/preview.jpg"/>
+    <image>
+      <cube url="panos/North_Carolina.tiles/pano_%s.jpg"/>
+      <cube url="panos/North_Carolina.tiles/mobile/pano_%s.jpg" devices="mobile"/>
+    </image>
+  </scene>
+  <scene name="scene_Riding_Camp" title="Lake Bryn Mawr Camp" onstart="" thumburl="panos/Riding_Camp.tiles/thumb.jpg" lat="" lng="" heading="">
+    <view hlookat="-334.207" vlookat="34.854" fovtype="MFOV" fov="120.000" fovmin="85" fovmax="145" limitview="auto"/>
+    <preview url="panos/Riding_Camp.tiles/preview.jpg"/>
+    <image>
+      <cube url="panos/Riding_Camp.tiles/pano_%s.jpg"/>
+      <cube url="panos/Riding_Camp.tiles/mobile/pano_%s.jpg" devices="mobile"/>
+    </image>
+  </scene>
+  <scene name="scene_Gym" title="Camp Romaca" onstart="" thumburl="panos/Gym.tiles/thumb.jpg" lat="" lng="" heading="">
+    <view hlookat="-237.084" vlookat="21.944" fovtype="MFOV" fov="120.000" fovmin="85" fovmax="145" limitview="auto"/>
+    <preview url="panos/Gym.tiles/preview.jpg"/>
+    <image>
+      <cube url="panos/Gym.tiles/pano_%s.jpg"/>
+      <cube url="panos/Gym.tiles/mobile/pano_%s.jpg" devices="mobile"/>
+    </image>
+  </scene>
+  <scene name="scene_GoKarts" title="Go Carts" onstart="" thumburl="panos/GoKarts.tiles/thumb.jpg" lat="" lng="" heading="">
+    <view hlookat="-424.284" vlookat="11.121" fovtype="MFOV" fov="120.000" fovmin="85" fovmax="145" limitview="auto"/>
+    <preview url="panos/GoKarts.tiles/preview.jpg"/>
+    <image>
+      <cube url="panos/GoKarts.tiles/pano_%s.jpg"/>
+      <cube url="panos/GoKarts.tiles/mobile/pano_%s.jpg" devices="mobile"/>
+    </image>
+  </scene>
+  <scene name="scene_Sports_Aerial" title="Camp Winnebago" onstart="" thumburl="panos/Sports_Aerial.tiles/thumb.jpg" lat="" lng="" heading="">
+    <view hlookat="-367.157492708824" vlookat="51.76228238079674" fovtype="MFOV" fov="120" fovmin="85" fovmax="145" limitview="auto"/>
+    <preview url="panos/Sports_Aerial.tiles/preview.jpg"/>
+    <image>
+      <cube url="panos/Sports_Aerial.tiles/pano_%s.jpg"/>
+      <cube url="panos/Sports_Aerial.tiles/mobile/pano_%s.jpg" devices="mobile"/>
+    </image>
+  </scene>
+  <!-- <scene name="scene_Dining_Deck" title="Dining Deck" onstart="" thumburl="panos/Dining_Deck.tiles/thumb.jpg" lat="" lng="" heading="">
+    <view hlookat="-61.838" vlookat="0.830" fovtype="MFOV" fov="120.000" fovmin="85" fovmax="145" limitview="auto"/>
+    <preview url="panos/Dining_Deck.tiles/preview.jpg"/>
+    <image>
+      <cube url="panos/Dining_Deck.tiles/pano_%s.jpg"/>
+      <cube url="panos/Dining_Deck.tiles/mobile/pano_%s.jpg" devices="mobile"/>
+    </image>
+  </scene> -->
+  <scene name="scene_Cabins" title="Silver Lake Camp" onstart="" thumburl="panos/Cabins.tiles/thumb.jpg" lat="" lng="" heading="">
+    <view hlookat="-87.580" vlookat="25.756" fovtype="MFOV" fov="120.000" fovmin="85" fovmax="145" limitview="auto"/>
+    <preview url="panos/Cabins.tiles/preview.jpg"/>
+    <image>
+      <cube url="panos/Cabins.tiles/pano_%s.jpg"/>
+      <cube url="panos/Cabins.tiles/mobile/pano_%s.jpg" devices="mobile"/>
+    </image>
+  </scene>
+  <scene name="scene_Golf_CT" title="KenMont KenWood" onstart="" thumburl="panos/Golf_CT.tiles/thumb.jpg" lat="" lng="" heading="">
+    <view hlookat="-226.856" vlookat="42.227" fovtype="MFOV" fov="120.000" fovmin="85" fovmax="145" limitview="auto"/>
+    <preview url="panos/Golf_CT.tiles/preview.jpg"/>
+    <image>
+      <cube url="panos/Golf_CT.tiles/pano_%s.jpg"/>
+      <cube url="panos/Golf_CT.tiles/mobile/pano_%s.jpg" devices="mobile"/>
+    </image>
+  </scene>
+  <scene name="scene_New_Hampshire" title="Camp Birchmont" onstart="" thumburl="panos/New_Hampshire.tiles/thumb.jpg" lat="" lng="" heading="">
+    <view hlookat="-319.441" vlookat="44.787" fovtype="MFOV" fov="120.000" fovmin="85" fovmax="145" limitview="auto"/>
+    <preview url="panos/New_Hampshire.tiles/preview.jpg"/>
+    <image>
+      <cube url="panos/New_Hampshire.tiles/pano_%s.jpg"/>
+      <cube url="panos/New_Hampshire.tiles/mobile/pano_%s.jpg" devices="mobile"/>
+    </image>
+  </scene>
+  <scene name="scene_jeff_lake_main_aerial" title="Jeff Lake Day Camp" onstart="" thumburl="panos/Jeff_Lake_Main_Aerial.tiles/thumb.jpg" lat="" lng="" heading="">
+    <view hlookat="-79.729" vlookat="57.091" fovtype="MFOV" fov="102.065" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto"/>
+    <preview url="panos/Jeff_Lake_Main_Aerial.tiles/preview.jpg"/>
+    <image>
+      <cube url="panos/Jeff_Lake_Main_Aerial.tiles/pano_%s.jpg"/>
+      <cube url="panos/Jeff_Lake_Main_Aerial.tiles/mobile/pano_%s.jpg" devices="mobile"/>
+    </image>
+  </scene>
+
+  
+  <!-- 
+  <scene name="scene_Woodworking" title="Woodworking" onstart="" thumburl="panos/Woodworking.tiles/thumb.jpg" lat="" lng="" heading="">
+    <view hlookat="-30.665" vlookat="27.447" fovtype="MFOV" fov="120.000" fovmin="85" fovmax="145" limitview="auto"/>
+    <preview url="panos/Woodworking.tiles/preview.jpg"/>
+    <image>
+      <cube url="panos/Woodworking.tiles/pano_%s.jpg"/>
+      <cube url="panos/Woodworking.tiles/mobile/pano_%s.jpg" devices="mobile"/>
+    </image>
+  </scene> -->
+  <scene name="scene_winadu_tennis" title="Camp Winadu" onstart="" thumburl="panos/Winadu_Tennis.tiles/thumb.jpg" lat="" lng="" heading="">
+    <view hlookat="1.950" vlookat="0.000" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto"/>
+    <preview url="panos/Winadu_Tennis.tiles/preview.jpg"/>
+    <image>
+      <cube url="panos/Winadu_Tennis.tiles/pano_%s.jpg"/>
+      <cube url="panos/Winadu_Tennis.tiles/mobile/pano_%s.jpg" devices="mobile"/>
+    </image>
+  </scene>
+  
+  <scene name="scene_Tennis_Maine" title="Camp Takajo" onstart="" thumburl="panos/Tennis_Maine.tiles/thumb.jpg" lat="" lng="" heading="">
+    <view hlookat="76.864" vlookat="37.121" fovtype="MFOV" fov="120.000" fovmin="85" fovmax="145" limitview="auto"/>
+    <preview url="panos/Tennis_Maine.tiles/preview.jpg"/>
+    <image>
+      <cube url="panos/Tennis_Maine.tiles/pano_%s.jpg"/>
+      <cube url="panos/Tennis_Maine.tiles/mobile/pano_%s.jpg" devices="mobile"/>
+    </image>
+  </scene>
+</krpano>

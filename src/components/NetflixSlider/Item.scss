@@ -1,0 +1,47 @@
+.item {
+  flex: 0 0 19.7%;
+  transition: transform 300ms ease 100ms;
+  margin: 0 2px;
+  position: relative;
+
+  img {
+    height: 100%;
+    width: 100%;
+    vertical-align: top;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  span.title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color:#fff;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    font-size: 1.25em;
+    text-shadow: #000 0 0 5px;
+    font-family: 'Oswald', sans-serif;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+    /* tablets and desktop */
+}
+
+@media only screen and (max-width: 767px) {
+  .item {
+    span.title {
+      font-size: 0.8em;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .item {
+    span.title {
+      font-size: 0.8em;
+    }
+  }
+}

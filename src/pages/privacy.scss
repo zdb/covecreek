@@ -1,0 +1,23 @@
+body, p {
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2em;
+  font-weight: 500;
+}
+
+
+
+.privacy {
+  
+  p, ul {
+    text-align: left;
+    max-width: 750px;
+    margin: auto;  
+  }
+  p { font-size: 16px; }
+  h3 { margin: 1em; font-size: 1em; letter-spacing: 2px; font-family: 'Oswald', sans-serif; color: #56a9e0; text-transform: uppercase;}
+  li { color: #fff; margin: 0.5em;}
+}

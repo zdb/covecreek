@@ -1,0 +1,143 @@
+﻿<?xml version="1.0"?>
+<krpano>
+  <autorotate speed="1.5" enabled="true"  horizon="off"></autorotate>
+  <skin_settings
+   loadscene_flags="MERGE"
+   loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+   loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+   loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+  />
+
+
+  <!-- startup action - load the first scene -->
+  <action name="startup" autorun="onstart">
+    if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+    loadscene(get(startscene), null, MERGE);
+    if(startactions !== null, startactions() );
+  </action>
+
+  <events keep="true" onidle="autoslide"></events>
+  <events keep="true" onclick="stopautoslide"></events>
+
+  <action name="autoslide">
+    setinterval("autoslideinterval", 5,
+      skin_nextscene_loop(+1);
+    );
+  </action>
+  <action name="stopautoslide">
+    clearinterval("autoslideinterval");
+  </action>
+
+  <action name="nextslide">
+    stopautoslide();
+    skin_nextscene_loop(+1);
+    autoslide();
+  </action>
+
+  <action name="prevslide">
+    stopautoslide();
+    skin_nextscene_loop(-1);
+    autoslide();
+  </action>
+
+
+  <action name="skin_nextscene">
+    add(newsceneindex, scene[get(xml.scene)].index, %1);
+    if(newsceneindex GE 0 AND newsceneindex LT scene.count,
+      skin_loadscene(get(newsceneindex), calc(%1 LT 0 ? skin_settings.loadscene_blend_prev : skin_settings.loadscene_blend_next));
+      );
+  </action>
+
+
+  <action name="skin_nextscene_loop">
+    add(newsceneindex, scene[get(xml.scene)].index, %1);
+    sub(lastsceneindex, scene.count, 1);
+    if(newsceneindex LT 0, copy(newsceneindex,lastsceneindex));
+    if(newsceneindex GT lastsceneindex, set(newsceneindex,0));
+    skin_loadscene(get(newsceneindex), calc(%1 LT 0 ? skin_settings.loadscene_blend_prev : skin_settings.loadscene_blend_next));
+  </action>
+
+  <action name="skin_loadscene">
+    loadscene(get(scene[%1].name), null, get(skin_settings.loadscene_flags), %2);
+  </action>
+  
+  <plugin name="gyro" keep="true" url="" html5_url="plugins/gyro2.js" devices="html5+!firefox+!android" enabled="true" camroll="true" friction="0" velastic="0" />
+
+  <scene name="scene_chipinaw_night_aerial" title="Campus Night" onstart="" thumburl="panos/Chipinaw_Night_Aerial.tiles/thumb.jpg" lat="" lng="" heading="">
+    <view hlookat="-112.421" vlookat="38.714" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto"/>
+    <preview url="panos/Chipinaw_Night_Aerial.tiles/preview.jpg"/>
+    <image>
+      <cube url="panos/Chipinaw_Night_Aerial.tiles/pano_%s.jpg"/>
+      <cube url="panos/Chipinaw_Night_Aerial.tiles/mobile/pano_%s.jpg" devices="mobile"/>
+    </image>
+  </scene>
+
+
+<scene name="scene_Wekeela_Sunset_Aerial" title="Wekeela Sunset" onstart="" thumburl="panos/Wekeela_Sunset_Aerial.tiles/thumb.jpg" lat="44.34908611" lng="-70.29127944" heading="0.0">
+
+    <view hlookat="-178.024" vlookat="30.161" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+    <preview url="panos/Wekeela_Sunset_Aerial.tiles/preview.jpg" />
+
+    <image>
+      <cube url="panos/Wekeela_Sunset_Aerial.tiles/pano_%s.jpg" />
+      <cube url="panos/Wekeela_Sunset_Aerial.tiles/mobile/pano_%s.jpg" devices="mobile" />
+    </image>
+
+  </scene>
+
+  <scene name="scene_Ramapo_Central_Aerial" title="Ramapo (NY)" onstart="" thumburl="panos/Ramapo_Central_Aerial.tiles/thumb.jpg" lat="" lng="" heading="">
+
+    <view hlookat="265.201" vlookat="49.869" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+    <preview url="panos/Ramapo_Central_Aerial.tiles/preview.jpg" />
+
+    <image>
+      <cube url="panos/Ramapo_Central_Aerial.tiles/pano_%s.jpg" />
+      <cube url="panos/Ramapo_Central_Aerial.tiles/mobile/pano_%s.jpg" devices="mobile" />
+    </image>
+
+  </scene>
+
+  <scene name="scene_Brant_Lake_Chill_Vibes" title="Brant Lake Chill Vibes" onstart="" thumburl="panos/Brant_Lake_Chill_Vibes.tiles/thumb.jpg" lat="" lng="" heading="">
+
+    <view hlookat="4.893" vlookat="10.028" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+    <preview url="panos/Brant_Lake_Chill_Vibes.tiles/preview.jpg" />
+
+    <image>
+      <cube url="panos/Brant_Lake_Chill_Vibes.tiles/pano_%s.jpg" />
+      <cube url="panos/Brant_Lake_Chill_Vibes.tiles/mobile/pano_%s.jpg" devices="mobile" />
+    </image>
+
+  </scene>
+
+  <scene name="scene_CECBR_Pool_Aerial" title="Equinunk (PA)" onstart="" thumburl="panos/CECBR_Pool_Aerial.tiles/thumb.jpg" lat="41.81562917" lng="-75.19471056" heading="0.0">
+
+    <view hlookat="-4.256" vlookat="19.676" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+    <preview url="panos/CECBR_Pool_Aerial.tiles/preview.jpg" />
+
+    <image prealign="0|0.0|0">
+      <cube url="panos/CECBR_Pool_Aerial.tiles/pano_%s.jpg" />
+      <cube url="panos/CECBR_Pool_Aerial.tiles/mobile/pano_%s.jpg" devices="mobile" />
+    </image>
+
+  </scene>
+
+  <scene name="scene_Starlight_Cooking" title="Cooking (PA)" onstart="" thumburl="panos/Starlight_Cooking.tiles/thumb.jpg" lat="" lng="" heading="">
+
+    <view hlookat="-198.963" vlookat="7.686" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+    <preview url="panos/Starlight_Cooking.tiles/preview.jpg" />
+
+    <image>
+      <cube url="panos/Starlight_Cooking.tiles/pano_%s.jpg" />
+      <cube url="panos/Starlight_Cooking.tiles/mobile/pano_%s.jpg" devices="mobile" />
+    </image>
+
+  </scene>
+
+
+
+</krpano>

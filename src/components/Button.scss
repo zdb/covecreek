@@ -1,0 +1,73 @@
+@import 'bulma';
+
+.button {
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover:after {
+    height: calc(100% + 4px);
+    background-color: #0076c4;
+  }
+  
+  transition: color 300ms, border-color 500ms, background-color 1500ms;
+  border-color: #0076c4;
+  color: #0076c4;
+  background: transparent;
+  text-decoration: none;
+  
+  font-family: 'Oswald', sans-serif;
+  border-width: 2px;
+  margin: 1.5em 0.5em;
+  
+  font-size: 1.25em;
+  border-radius: 0;
+
+  i {
+    margin-right: 0.5em;
+    font-size: 0.75em;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: 2px;
+    background-color: #fff;
+    transition: height 300ms;
+    z-index: 1;
+  }
+
+  span {
+    position: relative;
+    z-index: 99;
+  }
+}
+
+.button.is-outlined {
+  color:  white;
+  background: transparent;
+  border-color: #fff;
+
+  &:hover {
+    border-color: #0076c4;
+  }
+}
+
+.button.is-primary {
+  color:  white;
+  background: #0076c4;
+  border-color: #0076c4;
+
+  &:hover {
+    color:  #0076c4;
+    background: #0076c4a1
+  }
+
+  &:after {
+    background: #fff;
+  }
+}

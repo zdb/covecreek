@@ -1,0 +1,60 @@
+.vimeo-popup {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  min-width: 70%;
+  position: absolute;
+  background: #2a3c61;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  padding-top: 3em;
+  width: 93%;
+  color: #fff;
+
+  .closeButton {
+    background: none;
+    border: none;
+    color: #fff;
+    float: right;
+    position: absolute;
+    right: 0.25em;
+    top: 0.25em;
+    font-size: 1.5em;
+  }
+}
+
+.popup-player {
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+
+.popup-player--mobile {
+  display: none;
+}
+		
+.popup-player iframe,
+.popup-player object,
+.popup-player embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+  .popup-player--mobile {
+    display: block;
+    position: absolute;
+    z-index: -99999;
+    left: -999999px;
+    top: -9999999px
+  }
+}
